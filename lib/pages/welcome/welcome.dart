@@ -150,7 +150,7 @@ class _WelcomeState extends State<Welcome> {
               //   builder: (context) => const MyHomePage(),
               // ));
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil("myHomePage", (route) => false);
+                  .pushNamedAndRemoveUntil("signIn", (route) => false);
             }
           },
           child: Container(
