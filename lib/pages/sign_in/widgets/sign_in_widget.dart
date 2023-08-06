@@ -27,12 +27,10 @@ AppBar buildAppBar() {
 Widget buildThirdPartyLogin(BuildContext context) {
   return Center(
     child: Container(
-        margin: EdgeInsets.only(
-          top: 40.h,
-          bottom: 20.h,
-        ),
+        margin: EdgeInsets.only(top: 40.h, bottom: 20.h),
+        padding: EdgeInsets.only(left: 25.h, right: 25.h),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _reusableIcons("google"),
             _reusableIcons("apple"),
