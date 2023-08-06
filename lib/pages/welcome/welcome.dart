@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_events.dart';
 
-import '../../main.dart';
 import 'bloc/welcome_states.dart';
 
 class Welcome extends StatefulWidget {
@@ -147,9 +146,11 @@ class _WelcomeState extends State<Welcome> {
               );
             } else {
               // jump to a next page
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const MyHomePage(),
-              ));
+              // Navigator.of(context).push(MaterialPageRoute(
+              //   builder: (context) => const MyHomePage(),
+              // ));
+              Navigator.of(context)
+                  .pushNamedAndRemoveUntil("myHomePage", (route) => false);
             }
           },
           child: Container(
