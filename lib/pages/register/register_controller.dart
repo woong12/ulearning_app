@@ -31,7 +31,7 @@ class RegisterController {
     }
 
     if (rePassword.isEmpty) {
-      toastInfo(msg: "Your password confirmation is wrond");
+      toastInfo(msg: "Your password confirmation is wrong");
       return;
     }
 
