@@ -148,12 +148,15 @@ class _WelcomeState extends State<Welcome> {
                 curve: Curves.easeIn,
               );
             } else {
+              print("-1");
               // jump to a next page
               // Navigator.of(context).push(MaterialPageRoute(
               //   builder: (context) => const MyHomePage(),
               // ));
               Global.storageService
                   .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
+              print("0");
+
               Navigator.of(context)
                   .pushNamedAndRemoveUntil("/sign_in", (route) => false);
             }

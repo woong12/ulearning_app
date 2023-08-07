@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
           onGenerateRoute: AppPages.GenerateRouteSettings,
-          // home: const ApplicationPage(),
         ),
       ),
     );
