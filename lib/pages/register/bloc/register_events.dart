@@ -10,26 +10,26 @@ class UserNameEvent extends RegisterEvent {
   );
 }
 
-class UserEmailEvent extends RegisterEvent {
+class EmailEvent extends RegisterEvent {
   final String email;
 
-  const UserEmailEvent(
+  const EmailEvent(
     this.email,
   );
 }
 
-class UserPasswordEvent extends RegisterEvent {
+class PasswordEvent extends RegisterEvent {
   final String password;
 
-  const UserPasswordEvent(
+  const PasswordEvent(
     this.password,
   );
 }
 
-class UserRePasswordEvent extends RegisterEvent {
+class RePasswordEvent extends RegisterEvent {
   final String rePassword;
 
-  const UserRePasswordEvent(
+  const RePasswordEvent(
     this.rePassword,
   );
 }

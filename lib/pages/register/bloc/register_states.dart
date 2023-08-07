@@ -3,13 +3,13 @@ class RegisterStates {
   final String email;
   final String password;
   final String rePassword;
-
-  const RegisterStates(
-    this.userName,
-    this.email,
-    this.password,
-    this.rePassword,
-  );
+  // optional named parameter
+  const RegisterStates({
+    this.userName = "",
+    this.email = "",
+    this.password = "",
+    this.rePassword = "",
+  });
 
   RegisterStates copyWith({
     String? userName,
@@ -18,10 +18,10 @@ class RegisterStates {
     String? rePassword,
   }) {
     return RegisterStates(
-      userName ?? this.userName,
-      email ?? this.email,
-      password ?? this.password,
-      rePassword ?? this.password,
+      userName: userName ?? this.userName,
+      email: email ?? this.email,
+      password: password ?? this.password,
+      rePassword: rePassword ?? this.password,
     );
   }
 }
