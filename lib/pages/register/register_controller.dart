@@ -6,7 +6,7 @@ import 'package:ulearning_app/pages/register/bloc/register_blocs.dart';
 
 class RegisterController {
   final BuildContext context;
-  const RegisterController(this.context);
+  const RegisterController({required this.context});
 
   void handleEmailRegister() async {
     final state = context.read<RegisterBlocs>().state;

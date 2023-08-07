@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/pages/register/bloc/register_blocs.dart';
 import 'package:ulearning_app/pages/register/bloc/register_events.dart';
 import 'package:ulearning_app/pages/register/bloc/register_states.dart';
+import 'package:ulearning_app/pages/register/register_controller.dart';
 
 import '../../common/widgets/common_widgets.dart';
 
@@ -100,7 +101,9 @@ class _RegisterState extends State<Register> {
                       "Sign up",
                       "login",
                       () {
-                        Navigator.of(context).pushNamed("register");
+                        // Navigator.of(context).pushNamed("register");
+                        RegisterController(context: context)
+                            .handleEmailRegister();
                       },
                     ),
                   ],
