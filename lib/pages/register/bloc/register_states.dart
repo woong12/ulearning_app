@@ -3,6 +3,7 @@ class RegisterStates {
   final String email;
   final String password;
   final String rePassword;
+
   // optional named parameter
   const RegisterStates({
     this.userName = "",
