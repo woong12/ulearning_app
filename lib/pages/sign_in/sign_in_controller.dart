@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ulearning_app/common/values/constant.dart';
 import 'package:ulearning_app/common/widgets/flutter_toast.dart';
 
+import '../../global.dart';
 import 'bloc/sign_in_blocs.dart';
 
 class SignInController {
@@ -46,6 +48,8 @@ class SignInController {
 
           if (user != null) {
             print("user exists");
+            Global.storageService
+                .setString(AppConstants.STORAGE_USER_TOKEN_KEY, "12345678");
             Navigator.of(context)
                 .pushNamedAndRemoveUntil("/application", (route) => false);
             // we got verified user from firebase
