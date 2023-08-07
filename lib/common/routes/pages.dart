@@ -10,6 +10,8 @@ import 'package:ulearning_app/pages/sign_in/sign_in.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:ulearning_app/pages/welcome/welcome.dart';
 
+import '../../global.dart';
+
 class AppPages {
   static List<PageEntity> routes() {
     return [
@@ -61,7 +63,14 @@ class AppPages {
       // check for route name matching when navigator gets triggered
       var result = routes().where((element) => element.route == settings.name);
       if (result.isNotEmpty) {
-        print("valid route name ${settings.name}");
+        // print("valid route name ${settings.name}");
+        bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
+        if (result.first.route == AppRoutes.INITIAL && deviceFirstOpen) {
+          return MaterialPageRoute(
+            builder: (_) => const SignIn(),
+            settings: settings,
+          );
+        }
         return MaterialPageRoute(
           builder: (_) => result.first.page,
           settings: settings,

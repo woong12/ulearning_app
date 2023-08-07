@@ -6,6 +6,8 @@ import 'package:ulearning_app/common/values/colors.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_events.dart';
 
+import '../../common/values/constant.dart';
+import '../../global.dart';
 import 'bloc/welcome_states.dart';
 
 class Welcome extends StatefulWidget {
@@ -150,6 +152,8 @@ class _WelcomeState extends State<Welcome> {
               // Navigator.of(context).push(MaterialPageRoute(
               //   builder: (context) => const MyHomePage(),
               // ));
+              Global.storageService
+                  .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
               Navigator.of(context)
                   .pushNamedAndRemoveUntil("/sign_in", (route) => false);
             }
