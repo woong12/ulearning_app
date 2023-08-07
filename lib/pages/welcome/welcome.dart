@@ -76,7 +76,7 @@ class _WelcomeState extends State<Welcome> {
                         color: AppColors.primaryThirdElementText,
                         activeColor: AppColors.primaryElement,
                         size: const Size.square(8.0),
-                        activeSize: const Size(15.0, 8.0),
+                        activeSize: const Size(18.0, 8.0),
                         activeShape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
