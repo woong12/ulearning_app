@@ -28,9 +28,9 @@ Widget buildThirdPartyLogin(BuildContext context) {
   return Center(
     child: Container(
         margin: EdgeInsets.only(top: 40.h, bottom: 20.h),
-        padding: EdgeInsets.only(left: 25.h, right: 25.h),
+        padding: EdgeInsets.only(left: 50.h, right: 50.h),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             _reusableIcons("google"),
             _reusableIcons("apple"),
@@ -61,7 +61,7 @@ Widget reusableText(String text) {
       style: TextStyle(
         color: Colors.grey.withOpacity(0.7),
         fontWeight: FontWeight.normal,
-        fontSize: 12.sp,
+        fontSize: 14.sp,
       ),
     ),
   );
@@ -147,7 +147,7 @@ Widget forgotPassword() {
     child: GestureDetector(
       onTap: () {},
       child: Text(
-        "Forget password",
+        "Forget password?",
         style: TextStyle(
           color: AppColors.primaryText,
           decoration: TextDecoration.underline,

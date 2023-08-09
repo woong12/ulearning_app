@@ -36,7 +36,7 @@ class _RegisterState extends State<Register> {
                           "Enter your details below & free sign up"),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 36.h),
+                      margin: EdgeInsets.only(top: 60.h),
                       padding: EdgeInsets.only(
                         left: 25.w,
                         right: 25.w,
@@ -93,7 +93,6 @@ class _RegisterState extends State<Register> {
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 25.w),
-                      width: 250.w,
                       child: reusableText(
                           "By creating an accout you have to agree with our them & condication"),
                     ),
