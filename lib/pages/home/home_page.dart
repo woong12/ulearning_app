@@ -54,6 +54,70 @@ class _HomePageState extends State<HomePage> {
                 SliverToBoxAdapter(
                   child: menuView(),
                 ),
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 18.h,
+                    horizontal: 0.w,
+                  ),
+                  sliver: SliverGrid(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 15,
+                      crossAxisSpacing: 15,
+                      childAspectRatio: 1.6,
+                    ),
+                    delegate: SliverChildBuilderDelegate(
+                      childCount: 4,
+                      (BuildContext contexxt, int index) {
+                        return GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            padding: EdgeInsets.all(12.w),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15.w),
+                              image: const DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage("assets/icons/image_2.png"),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Best course for IT and Engineering",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.fade,
+                                  textAlign: TextAlign.left,
+                                  softWrap: false,
+                                  style: TextStyle(
+                                    color: AppColors.primaryElementText,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 11.sp,
+                                  ),
+                                ),
+                                SizedBox(height: 5.h),
+                                Text(
+                                  "Flutter best course",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.fade,
+                                  textAlign: TextAlign.left,
+                                  softWrap: false,
+                                  style: TextStyle(
+                                    color: AppColors.primaryFourthElementText,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 8.sp,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
               ],
             ),
           );
