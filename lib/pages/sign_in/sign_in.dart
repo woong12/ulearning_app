@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/pages/sign_in/bloc/sign_in_events.dart';
 import 'package:ulearning_app/pages/sign_in/sign_in_controller.dart';
 // import 'package:ulearning_app/pages/sign_in/widgets/sign_in_widget.dart';
-import '../../common/widgets/common_widgets.dart';
+import '../common_widgets.dart';
 
 import 'bloc/sign_in_blocs.dart';
 import 'bloc/sign_in_states.dart';

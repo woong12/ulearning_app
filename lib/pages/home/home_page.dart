@@ -57,7 +57,6 @@ class _HomePageState extends State<HomePage> {
                 SliverPadding(
                   padding: EdgeInsets.symmetric(
                     vertical: 18.h,
-                    horizontal: 0.w,
                   ),
                   sliver: SliverGrid(
                     gridDelegate:
