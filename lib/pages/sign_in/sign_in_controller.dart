@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ulearning_app/common/values/constant.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:ulearning_app/common/entities/user.dart';
 import 'package:ulearning_app/common/widgets/flutter_toast.dart';
 
-import '../../global.dart';
+import '../../common/apis/user_api.dart';
 import 'bloc/sign_in_blocs.dart';
 
 class SignInController {
@@ -47,11 +48,25 @@ class SignInController {
           var user = credential.user;
 
           if (user != null) {
+            String? displayName = user.displayName;
+            String? email = user.email;
+            String? id = user.uid;
+            String? photoUrl = user.photoURL;
+
+            LoginRequestEntity loginRequestEntity = LoginRequestEntity();
+            loginRequestEntity.avatar = photoUrl;
+            loginRequestEntity.name = displayName;
+            loginRequestEntity.email = email;
+            loginRequestEntity.open_id = id;
+            // type 1 means email login
+            loginRequestEntity.type = 1;
+
             print("user exists");
-            Global.storageService
-                .setString(AppConstants.STORAGE_USER_TOKEN_KEY, "12345678");
-            Navigator.of(context)
-                .pushNamedAndRemoveUntil("/application", (route) => false);
+            asyncPostAllData(loginRequestEntity);
+            // Global.storageService
+            //     .setString(AppConstants.STORAGE_USER_TOKEN_KEY, "12345678");
+            // Navigator.of(context)
+            //     .pushNamedAndRemoveUntil("/application", (route) => false);
             // we got verified user from firebase
           } else {
             toastInfo(msg: "Currently you are not a user of this app");
@@ -76,5 +91,14 @@ class SignInController {
     } catch (e) {
       print(e.toString());
     }
+  }
+
+  Future<void> asyncPostAllData(LoginRequestEntity loginRequestEntity) async {
+    EasyLoading.show(
+      indicator: const CircularProgressIndicator(),
+      maskType: EasyLoadingMaskType.clear,
+      dismissOnTap: true,
+    );
+    var result = await UserAPI.login(param: loginRequestEntity);
   }
 }
